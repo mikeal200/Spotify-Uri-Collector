@@ -1,14 +1,10 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+  /* Load the HTTP library */
+  var http = require("http");
 
-function App() {
-  return (
-    <div className="App">
-      <h1>My react app</h1>
-      <h2>author michael williams</h2>
-    </div>
-  );
-}
+  /* Create an HTTP server to handle responses */
 
-export default App;
+  http.createServer(function(request, response) {
+    response.writeHead(200, {"Content-Type": "text/plain"});
+    response.write("Hello World");
+    response.end();
+  }).listen(8888);
